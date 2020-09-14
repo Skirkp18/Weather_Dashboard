@@ -16,6 +16,7 @@ h1 {
 /* main body */
 
 .container {
+    
 }
 
 /* search&history col */
@@ -24,6 +25,16 @@ h1 {
     background: lightgray;
     height: 600px;
 }
+
+/* inside search&history col */
+#searchbar {
+    margin-top: 10px;
+}
+
+
+
+
+
 
 #weatherAndFiveday {
 

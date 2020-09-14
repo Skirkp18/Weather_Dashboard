@@ -10,8 +10,7 @@
 	<!-- custom CSS -->
 	<link href="style.css" rel="stylesheet" type="text/css">
 	
-	<!-- jQuery Link -->
-	<script src="jquery-3.5.1.min.js"></script>
+
 </head>
 <body>
 
@@ -31,7 +30,24 @@
 
 
 	<!-- col 1 (searchbar and city history) -->
-	<div class="col-4" id="searchAndHistory">
+	<div class="col-4" id="searchAndHistory">	
+
+		<!-- search bar and search history -->
+
+		<!-- search bar -->
+		<h2>Search for a city:</h2>
+		<div class="input-group mb-3" id="searchbar">
+			<input type="text" class="form-control" placeholder="Search A City" aria-label="Recipient's username" aria-describedby="button-addon2">
+			<div class="input-group-append">
+			  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+			</div>
+		  </div>
+
+		  <!-- search history -->
+		  <ul class="list-group" id="searchhistory">
+		  </ul>
+
+
 
 	</div>
 
@@ -47,6 +63,11 @@
 </div>
 </div>	
 
-	
+
+  <!-- jQuery JS -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+  <!-- Code to the JavaScript File -->
+  <script src="script.js"></script>
 </body>
 </html>
