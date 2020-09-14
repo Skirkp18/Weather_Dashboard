@@ -1,3 +1,6 @@
+/* Stylesheet for weather dashboard homework */
+
+/* title bar */
 #title {
     background: black;
     height: 100px;
@@ -7,4 +10,22 @@ h1 {
     color: white;
     text-align: center;
     margin-top: 20px;
+}
+
+
+/* main body */
+
+.container {
+}
+
+/* search&history col */
+
+#searchAndHistory {
+    background: lightgray;
+    height: 600px;
+}
+
+#weatherAndFiveday {
+
+    background: whitesmoke;
 }
