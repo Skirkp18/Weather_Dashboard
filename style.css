@@ -15,8 +15,9 @@ h1 {
 
 /* main body */
 
-.container {
-    
+.mainContainer {
+    display: flex;
+    flex-direction: column;
 }
 
 /* search&history col */
@@ -24,6 +25,7 @@ h1 {
 #searchAndHistory {
     background: lightgray;
     height: 600px;
+    flex: auto;
 }
 
 /* inside search&history col */
@@ -39,6 +41,7 @@ h1 {
 #weatherAndFiveday {
 
     background: whitesmoke;
+    flex: auto;
 }
 
 /* current weather */
