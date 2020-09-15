@@ -34,9 +34,25 @@ h1 {
 
 
 
-
+/* weather and five day forcast */
 
 #weatherAndFiveday {
 
     background: whitesmoke;
+}
+
+/* current weather */
+
+#currentWeatherBox {
+    border: 2px solid grey;
+    height: 380px;
+    margin-top: 5px;
+}
+
+/* five day forcast */
+
+#fiveDayBox {
+    border: 2px solid grey;
+    height: 200px;
+    margin-top: 10px;
 }
