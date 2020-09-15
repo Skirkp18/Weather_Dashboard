@@ -113,6 +113,5 @@ loadSavedSearches();
 getCurrentWeather();
 getFiveDayForcast();
 
-// event listner
 
 

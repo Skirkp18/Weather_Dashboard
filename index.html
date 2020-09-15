@@ -30,7 +30,7 @@
 
 
 	<!-- col 1 (searchbar and city history) -->
-	<div class="col-lg-2" id="searchAndHistory">	
+	<div class="col-lg-3" id="searchAndHistory">	
 
 		<!-- search bar and search history -->
 
@@ -44,6 +44,8 @@
 		  </div>
 
 		  <!-- search history -->
+
+		  <h3>Previous Searches:</h3>
 		  <ul class="list-group" id="searchhistory"></ul>
 
 
@@ -52,7 +54,7 @@
 
 
 	<!-- col 2 (weather and 5 day history) -->
-	<div class="col-lg-10" id="weatherAndFiveday">
+	<div class="col-lg-9" id="weatherAndFiveday">
 
 		<!-- subgrid -->
 		<!-- container -->
@@ -60,15 +62,55 @@
 			<!-- row 1 -->
 			<div class="row">
 				<!--col 1 current weather  -->
-				<div class="col" id="currentWeatherBox">
+				<div class="col">
+					<div class=" col card"  id="currentWeatherBox">
+						<div class="card-body">
+							Current Weather
+						</div>
+					  </div>
 
 				</div>
 			</div>
 			<!-- row 2 -->
-			<div class="row">
-				<!-- col 1 five day forcast -->
-				<div class="col" id="fiveDayBox">
+			<div class="row" id="fiveDayBox">
+				<div class="col-12">
+				<h2>5-Day Forecast:</h2>
+				</div>
 
+				<!-- col 1 five day forcast -->
+				<div class=" col card" id="fiveDayCard">
+					<div class="card-body">
+						Day 1:
+					</div>
+				  </div>
+
+				  <div class=" col card" id="fiveDayCard">
+					<div class="card-body">
+						Day 2:
+					</div>
+				  </div>
+
+				  <div class="col card" id="fiveDayCard">
+					<div class="card-body">
+						Day 3:
+
+					</div>
+				  </div>
+
+				  <div class="col card" id="fiveDayCard">
+					<div class="card-body">
+						Day 4:
+					</div>
+				  </div>
+
+				  <div class="col card" id="fiveDayCard">
+					<div class="card-body">
+						Day 5:
+					</div>
+				  </div>
+				
+
+					
 				</div>
 			</div>
 		</div>

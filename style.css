@@ -24,7 +24,7 @@ h1 {
 
 #searchAndHistory {
     background: lightgray;
-    height: 600px;
+    height: 650px;
     flex: auto;
 }
 
@@ -47,15 +47,22 @@ h1 {
 /* current weather */
 
 #currentWeatherBox {
-    border: 2px solid grey;
-    height: 380px;
-    margin-top: 5px;
+   border: 2px solid black;
+    height: 350px;
+    margin-top: 20px;
 }
 
 /* five day forcast */
 
 #fiveDayBox {
-    border: 2px solid grey;
-    height: 200px;
     margin-top: 10px;
+}
+
+#fiveDayCard {
+    border: 1px solid black;
+    height: 200px;
+    width: 125px;
+    margin: 10px;
+    background-color: blue;
+    color: whitesmoke;
 }
