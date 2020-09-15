@@ -63,6 +63,7 @@ $("#button-addon2").on("click" , function(event) {
     writeToLocalStorage();
     loadSavedSearches();
     getCurrentWeather();
+    getFiveDayForcast();
 
 });
 
@@ -74,6 +75,7 @@ $("#searchhistory").on("click", function(event) {
     localStorage.setItem("searchCity", searchCity);
     loadSavedSearches();
     getCurrentWeather();
+    getFiveDayForcast();
 
 });
 
@@ -91,9 +93,25 @@ function getCurrentWeather () {
     });
 };
 
+function getFiveDayForcast () {
+    var key = "2fd6a7c1addf009b30af95d20e54bde2";
+    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + searchCity + "&appid=" + key;
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+        console.log(response);
+    });
+};
+
+
+
 // function calls
 
-loadSavedSearches()
+loadSavedSearches();
+getCurrentWeather();
+getFiveDayForcast();
 
 // event listner
 
