@@ -165,7 +165,7 @@ function displayCurrentWeather() {
     var windSpeedEl = $("<h6>").text("Wind Speed: " + currentWindSpeed + " MPH");
 
     $("#citynamedateandweather").append(cityNameAndDate);
-    $("#cityWeatherImg").attr("src", "http://openweathermap.org/img/w/" + currentWeatherIcon + ".png");
+    $("#cityWeatherImg").attr("src", "https://openweathermap.org/img/w/" + currentWeatherIcon + ".png");
     $("#weatherText").append(weatherText);
     $("#temperature").append(tempatureEl);
     $("#humidityPercent").append(humidityEl);
@@ -225,7 +225,7 @@ function displayFiveDayForcast() {
     var fiveDayCardEl = $("<div>").attr("class", "card forecastBox");
     var indexNumber = 7 + (8 * i);
     var forecastIcon = fiveDayForecastObj.list[indexNumber].weather[0].icon;
-    var forecastIconImg = $("<img>").attr("src", "http://openweathermap.org/img/w/" + forecastIcon + ".png");
+    var forecastIconImg = $("<img>").attr("src", "https://openweathermap.org/img/w/" + forecastIcon + ".png");
     var temperature = fiveDayForecastObj.list[indexNumber].main.temp_max;
     var humidity = fiveDayForecastObj.list[indexNumber].main.humidity;
 
