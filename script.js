@@ -10,7 +10,7 @@ var fiveDayForecastObj;
 var currentUVIndexObj;
 var cityLongited = "";
 var cityLatitude = "";
-var savedSearches = ["New York City", "Boston", "Los Angeles", "San Francisco", "Chicago", "Miami", "Pheonix", "Milwaake", "Washington D.C", "Orlando", "Seattle"];
+var savedSearches = ["New York City", "Boston", "Los Angeles", "San Francisco", "Chicago", "Miami", "Phoenix", "Denver", "Washington D.C", "Atlanta", "Seattle"];
 
 
 
@@ -131,7 +131,7 @@ function writeToLocalStorage() {
     var cityInput = searchInput.val();
     if (cityInput !== "") {
     console.log(cityInput);
-    var searchCity = cityInput;
+    searchCity = cityInput;
     savedSearches.unshift(cityInput);
     var stringifiedSavedSearches = JSON.stringify(savedSearches);
     localStorage.setItem("searches", stringifiedSavedSearches);
@@ -147,12 +147,13 @@ function displayCurrentWeather() {
     $("#windspeed").empty();
     $("#weatherText").empty();
 
-
+    console.log(searchCity);
+    var currentCity = currentWeatherObj.name;
     var currentTemp = currentWeatherObj.main.temp;
     var currentHumidity = currentWeatherObj.main.humidity;
     var currentWindSpeed = currentWeatherObj.wind.speed;
     var currentWeatherTxt = currentWeatherObj.weather[0].main + ": " + currentWeatherObj.weather[0].description;
-    var cityNameAndDate = $("<h5>").text(searchCity + " (" + currentDate + ") ");
+    var cityNameAndDate = $("<h5>").text(currentCity + " (" + currentDate + ") ");
     var weatherText = $("<h6>").text(currentWeatherTxt);
     var tempatureEl = $("<h6>").text("Temperature: " + currentTemp + " \u00B0F");
     var humidityEl = $("<h6>").text("Humidity: " + currentHumidity + " %");
@@ -174,6 +175,7 @@ function displayUVIndex() {
     $("#uvIndex").empty();
     
     var uvIndexCheck = currentUVIndexObj.value;
+    var uvIndexLabel = $("<h6>").text("UV Index:").attr("id", "uvIndexTxt")
     var uvIndex = $("<h6>").text(currentUVIndexObj.value).attr("id", "uvIndexTxt");
     var uvIndexEl = $("<div>").attr("class", "card uvIndexBox").text("UV Index: ").html(uvIndex);
     if (uvIndexCheck < 3) {
@@ -193,7 +195,7 @@ function displayUVIndex() {
         $(uvIndexEl).attr("id", "uvExtrm")
 
     }
-    
+    $("#uvIndex").append(uvIndexLabel);
     $("#uvIndex").append(uvIndexEl);
 
 
@@ -246,24 +248,25 @@ function displayFiveDayForcast() {
 
 function getCurrentDate () {
     var fullDate = new Date()
-console.log(fullDate);
+// console.log(fullDate);
 //Thu May 19 2011 17:25:38 GMT+1000 {}
  
 //convert month to 2 digits
 var twoDigitMonth = ((fullDate.getMonth().length+1) === 1)? (fullDate.getMonth()+1) : '0' + (fullDate.getMonth()+1);
  
 currentDate = twoDigitMonth + "/" + fullDate.getDate() + "/" + fullDate.getFullYear();
-console.log(currentDate);
+// console.log(currentDate);
 }
 
 
 
 
 // function calls
+loadSavedSearches();
 getCurrentDate();
 getCurrentWeather();
-loadSavedSearches();
 getFiveDayForcast();
+
 
 
 
