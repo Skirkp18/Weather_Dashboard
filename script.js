@@ -145,6 +145,7 @@ function displayCurrentWeather() {
     $("#temperature").empty();
     $("#humidityPercent").empty();
     $("#windspeed").empty();
+    $("#weatherText").empty();
 
 
     var currentTemp = currentWeatherObj.main.temp;
@@ -170,7 +171,7 @@ function displayCurrentWeather() {
 
 function displayUVIndex() {
  
-    // $("#uvIndex").empty();
+    $("#uvIndex").empty();
     
     var uvIndexCheck = currentUVIndexObj.value;
     var uvIndex = $("<h6>").text(currentUVIndexObj.value).attr("id", "uvIndexTxt");
