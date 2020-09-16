@@ -72,6 +72,13 @@ h5 {
     margin: 10px;
     background-color: darkblue;
     color: whitesmoke;
+    text-align: center;
+}
+
+#forcastImgIcon {
+    height: 100px;
+    width: 125px;
+    margin-left: 5px;
 }
 
 /* uv Index Div */

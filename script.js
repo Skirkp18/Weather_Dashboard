@@ -225,7 +225,7 @@ function displayFiveDayForcast() {
     var fiveDayCardEl = $("<div>").attr("class", "card forecastBox");
     var indexNumber = 7 + (8 * i);
     var forecastIcon = fiveDayForecastObj.list[indexNumber].weather[0].icon;
-    var forecastIconImg = $("<img>").attr("src", "https://openweathermap.org/img/w/" + forecastIcon + ".png");
+    var forecastIconImg = $("<img>").attr("src", "https://openweathermap.org/img/w/" + forecastIcon + ".png").attr("id", "forcastImgIcon");
     var temperature = fiveDayForecastObj.list[indexNumber].main.temp_max;
     var humidity = fiveDayForecastObj.list[indexNumber].main.humidity;
 
