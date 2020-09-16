@@ -66,10 +66,10 @@ h5 {
 
 
 .forecastBox {
-    border: 1px solid black;
+    border: 2px solid gray;
     height: 200px;
-    width: 150px;
-    margin: 25px;
+    width: 300px;
+    margin: 10px;
     background-color: darkblue;
     color: whitesmoke;
 }

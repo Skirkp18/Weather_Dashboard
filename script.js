@@ -25,6 +25,16 @@ $("#button-addon2").on("click" , function(event) {
 
 });
 
+// when enter pressed
+$('#searchInput').keypress(function(event){
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    if(keycode == '13'){
+        writeToLocalStorage();
+        loadSavedSearches();
+        getCurrentWeather();
+        getFiveDayForcast();
+    }
+});
 // history clicked
 $("#searchhistory").on("click", function(event) {
 
@@ -50,14 +60,11 @@ function getCurrentWeather () {
     }).then(function(response) {
         // console.log(response);
         currentWeatherObj = response
-        console.log(currentWeatherObj);
         currentWeatherIcon = currentWeatherObj.weather[0].icon;
         // console.log(currentWeatherIcon);
         displayCurrentWeather();
         cityLongited = currentWeatherObj.coord.lon;
         cityLatitude = currentWeatherObj.coord.lat;
-        console.log(cityLatitude)
-        console.log(cityLongited)
         getUVIndex();
 
 
@@ -80,10 +87,8 @@ function getFiveDayForcast () {
 };
 
 function getUVIndex () {
-    console.log(cityLatitude);
     var key = "2fd6a7c1addf009b30af95d20e54bde2";
     var queryURL = "http://api.openweathermap.org/data/2.5/uvi?appid=" + key + "&lat=" + cityLatitude + "&lon=" + cityLongited;
-    Parameters:
 
     $.ajax({
       url: queryURL,
@@ -91,7 +96,6 @@ function getUVIndex () {
     }).then(function(response) {
         // console.log(response);
         currentUVIndexObj = response;
-        console.log(currentUVIndexObj);
         displayUVIndex();
     });
 
@@ -104,7 +108,9 @@ function getUVIndex () {
 function loadSavedSearches() {
 
     searchHistoryEL.empty();
+    if (localStorage.getItem("searchCity") !== null) {
     searchCity = localStorage.getItem("searchCity")
+    };
     var localSearches = localStorage.getItem("searches");
     var parsedLocalSearches = JSON.parse(localSearches);
     if (parsedLocalSearches !== null) {
@@ -147,7 +153,6 @@ function displayCurrentWeather() {
     $("#windspeed").empty();
     $("#weatherText").empty();
 
-    console.log(searchCity);
     var currentCity = currentWeatherObj.name;
     var currentTemp = currentWeatherObj.main.temp;
     var currentHumidity = currentWeatherObj.main.humidity;
@@ -185,7 +190,6 @@ function displayUVIndex() {
 
     } else if (uvIndexCheck >= 6 && uvIndexCheck < 8 ) {
         $(uvIndexEl).attr("id", "uvHigh")
-        console.log("hi");
         
 
     } else if (uvIndexCheck >= 8 && uvIndexCheck < 11) {
