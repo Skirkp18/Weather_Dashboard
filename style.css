@@ -51,7 +51,8 @@ h1 {
 }
 
 #cityWeatherImg {
-    size: 200px;
+    height: 100px;
+    width: 125px;
 }
 
 h5 {
@@ -74,7 +75,7 @@ h5 {
     height: 200px;
     width: 300px;
     margin: 10px;
-    background-color: darkblue;
+    background-color: rgb(11, 136, 194);
     color: whitesmoke;
     text-align: center;
 }
@@ -94,15 +95,16 @@ h5 {
 
 .uvIndexBox {
     border: 2px solid gray;
-    width: 70px;
+    width: 100px;
     height: 50px;
     text-align: center;
 
 }
 
 #uvIndexTxt {
-    margin-top: 13px;
+    margin-top: 10px;
     font-weight: bolder;
+    font-size: larger;
 }
 
 /* UV Index Sate */

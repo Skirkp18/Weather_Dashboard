@@ -180,9 +180,9 @@ function displayUVIndex() {
     $("#uvIndex").empty();
     
     var uvIndexCheck = currentUVIndexObj.value;
-    var uvIndexLabel = $("<h6>").text("UV Index:").attr("id", "uvIndexTxt")
+    var uvIndexLabel = $("<h6>").text("UV Index:").attr("id", "uvIndexTxt");
     var uvIndex = $("<h6>").text(currentUVIndexObj.value).attr("id", "uvIndexTxt");
-    var uvIndexEl = $("<div>").attr("class", "card uvIndexBox").text("UV Index: ").html(uvIndex);
+    var uvIndexEl = $("<div>").attr("class", "card uvIndexBox").html(uvIndex);
     if (uvIndexCheck < 3) {
         $(uvIndexEl).attr("id", "uvLow")
     } else if (uvIndexCheck >= 3 && uvIndexCheck < 6) {
@@ -199,7 +199,7 @@ function displayUVIndex() {
         $(uvIndexEl).attr("id", "uvExtrm")
 
     }
-    $("#uvIndex").append(uvIndexLabel);
+    // $("#uvIndex").append(uvIndexLabel);
     $("#uvIndex").append(uvIndexEl);
 
 
