@@ -16,8 +16,6 @@ h1 {
 /* main body */
 
 .mainContainer {
-    display: flex;
-    flex-direction: column;
 }
 
 /* search&history col */
@@ -41,7 +39,7 @@ h1 {
 #weatherAndFiveday {
 
     background: whitesmoke;
-    flex: auto;
+    /* flex: auto; */
 }
 
 /* current weather */
@@ -58,15 +56,20 @@ h5 {
 
 /* five day forcast */
 
-#fiveDayBox {
+#fiveDayForecast {
     margin-top: 10px;
 }
 
-#fiveDayCard {
+#cardBox {
+    display: flex;
+}
+
+
+.forecastBox {
     border: 1px solid black;
     height: 200px;
-    width: 125px;
-    margin: 10px;
-    background-color: blue;
+    width: 150px;
+    margin: 25px;
+    background-color: darkblue;
     color: whitesmoke;
 }

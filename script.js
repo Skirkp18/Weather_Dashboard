@@ -2,9 +2,11 @@
 var searchInput = $("input");
 var searchBtn = $("button");
 var searchHistoryEL = $("#searchhistory");
-var currentWeatherEL = $("#currentWeatherBody")
+var currentWeatherEL = $("#currentWeatherBody");
+var fiveDayForecastEl = $("#cardBox");
 var searchCity = "New York City";
 var currentWeatherObj;
+var fiveDayForecastObj;
 var savedSearches = ["New York City", "Boston", "Los Angeles", "San Francisco", "Chicago", "Miami", "Pheonix", "Milwaake", "Washington D.C", "Orlando", "Seattle"];
 
 
@@ -43,9 +45,9 @@ function getCurrentWeather () {
       url: queryURL,
       method: "GET"
     }).then(function(response) {
-        console.log(response);
+        // console.log(response);
         currentWeatherObj = response
-        console.log(currentWeatherObj);
+        // console.log(currentWeatherObj);
         currentWeatherIcon = currentWeatherObj.weather[0].icon;
         console.log(currentWeatherIcon);
         displayCurrentWeather();
@@ -61,7 +63,10 @@ function getFiveDayForcast () {
       url: queryURL,
       method: "GET"
     }).then(function(response) {
-        console.log(response);
+        // console.log(response);
+        fiveDayForecastObj = response;
+        console.log(fiveDayForecastObj);
+        displayFiveDayForcast();
     });
 };
 
@@ -131,6 +136,50 @@ function displayCurrentWeather() {
     $("#windspeed").append(windSpeedEl);
 
     
+
+}
+
+function displayFiveDayForcast() {
+
+    $(fiveDayForecastEl).html("");
+
+    for (var i = 1; i < 6; i++) {
+
+        var someDate = new Date();
+        var numberOfDaysToAdd = i;
+        someDate.setDate(someDate.getDate() + numberOfDaysToAdd); 
+        var dd = someDate.getDate();
+        var mm = someDate.getMonth() + 1;
+        var y = someDate.getFullYear();
+
+        var futureDates = mm + '/'+ dd + '/'+ y;
+        
+
+    var fiveDayCardEl = $("<div>").attr("class", "card forecastBox");
+    var indexNumber = 7 * i;
+    var forecastIcon = fiveDayForecastObj.list[indexNumber].weather[0].icon;
+    var forecastIconImg = $("<img>").attr("src", "http://openweathermap.org/img/w/" + forecastIcon + ".png");
+    var temperature = fiveDayForecastObj.list[indexNumber].main.temp;
+    var humidity = fiveDayForecastObj.list[indexNumber].main.humidity;
+
+
+    console.log(i);
+    $(fiveDayCardEl).append(futureDates);
+    $(fiveDayCardEl).append(forecastIconImg);
+    $(fiveDayCardEl).append("Temp: " + temperature + " \u00B0F ");
+    $(fiveDayCardEl).append("Humidity: " + humidity + "%");
+
+    $(fiveDayForecastEl).append(fiveDayCardEl);
+
+
+
+
+      }
+
+
+
+
+
 
 }
 

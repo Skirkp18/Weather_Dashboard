@@ -1,142 +1,122 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8" />
 	<title>Weather Dashboard</title>
-	
+
 	<!-- bootstrap -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
 	<!-- custom CSS -->
 	<link href="style.css" rel="stylesheet" type="text/css">
-	
+
 
 </head>
+
 <body>
 
-<!-- Header -->
-<header class="row">
-	<div class= "col-12" id="title">
-		<h1>Weather Dashboard</h1>
-	</div>
-</header>
-	
-
-<!-- grid system -->
-<div class="container-fluid" id="mainContainer">
-<!-- row -->
-<div class="row">
+	<!-- Header -->
+	<header class="row">
+		<div class="col-12" id="title">
+			<h1>Weather Dashboard</h1>
+		</div>
+	</header>
 
 
+	<!-- grid system -->
+	<div class="container-fluid" id="mainContainer">
+		<!-- row -->
+		<div class="row">
 
-	<!-- col 1 (searchbar and city history) -->
-	<div class="col-lg-3" id="searchAndHistory">	
 
-		<!-- search bar and search history -->
 
-		<!-- search bar -->
-		<h2>Search for a city:</h2>
-		<div class="input-group mb-3" id="searchbar">
-			<input type="text" class="form-control" placeholder="Search A City" aria-label="Recipient's username" aria-describedby="button-addon2">
-			<div class="input-group-append">
-			  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+			<!-- col 1 (searchbar and city history) -->
+			<div class="col-lg-3" id="searchAndHistory">
+
+				<!-- search bar and search history -->
+
+				<!-- search bar -->
+				<h2>Search for a city:</h2>
+				<div class="input-group mb-3" id="searchbar">
+					<input type="text" class="form-control" placeholder="Search A City"
+						aria-label="Recipient's username" aria-describedby="button-addon2">
+					<div class="input-group-append">
+						<button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+					</div>
+				</div>
+
+				<!-- search history -->
+
+				<h3>Previous Searches:</h3>
+				<ul class="list-group" id="searchhistory"></ul>
+
+
+
 			</div>
-		  </div>
-
-		  <!-- search history -->
-
-		  <h3>Previous Searches:</h3>
-		  <ul class="list-group" id="searchhistory"></ul>
 
 
+			<!-- col 2 (weather and 5 day history) -->
+			<div class="col-lg-9" id="weatherAndFiveday">
 
-	</div>
-
-
-	<!-- col 2 (weather and 5 day history) -->
-	<div class="col-lg-9" id="weatherAndFiveday">
-
-		<!-- subgrid -->
-		<!-- container -->
-		<div class="container">
-			<!-- row 1 -->
-			<div class="row">
-				<!--col 1 current weather  -->
-				<div class="col">
-					<div class=" col card"  id="currentWeatherBox">
-						<div class="card-body">
-							<div class="row" id="citynamedateandweather">
+				<!-- subgrid -->
+				<!-- container -->
+				<div class="container-fluid">
+					<!-- row 1 -->
+					<div class="row">
+						<!--col 1 current weather  -->
+						<div class="col-12">
+							<div class="card" id="currentWeatherBox">
+								<div class="card-body">
+									<div id="citynamedateandweather">
+									</div>
+									<div id="temperature">
+									</div>
+									<div id="humidityPercent">
+									</div>
+									<div id="windspeed">
+									</div>
+									<div id="uvIndex">
+									</div>
+								</div>
 							</div>
-							<div class="row" id="temperature">
-							</div>
-							<div class="row" id="humidityPercent">
-							</div>
-							<div class="row" id="windspeed">
-							</div>
-							<div class="row" id="uvIndex">
-							</div>
+
 						</div>
-					  </div>
+					</div>
+					<!-- row 2 -->
+					<div class="row" id="fiveDayForecast">
+						<!-- col 1 -->
+						<div class="col-12">
+							<h2>5-Day Forecast:</h2>
+						</div>
 
+						<!-- col 2 -->
+						<div class="col-12" id="cardBox">
+
+						</div>
+
+
+
+
+					</div>
 				</div>
 			</div>
-			<!-- row 2 -->
-			<div class="row" id="fiveDayBox">
-				<div class="col-12">
-				<h2>5-Day Forecast:</h2>
-				</div>
 
-				<!-- col 1 five day forcast -->
-				<div class=" col card" id="fiveDayCard">
-					<div class="card-body">
-						Day 1:
-					</div>
-				  </div>
-
-				  <div class=" col card" id="fiveDayCard">
-					<div class="card-body">
-						Day 2:
-					</div>
-				  </div>
-
-				  <div class="col card" id="fiveDayCard">
-					<div class="card-body">
-						Day 3:
-
-					</div>
-				  </div>
-
-				  <div class="col card" id="fiveDayCard">
-					<div class="card-body">
-						Day 4:
-					</div>
-				  </div>
-
-				  <div class="col card" id="fiveDayCard">
-					<div class="card-body">
-						Day 5:
-					</div>
-				  </div>
-				
-
-					
-				</div>
-			</div>
 		</div>
 
+
+
+
 	</div>
-	
+	</div>
 
 
-
-</div>
-</div>	
-
-
-  <!-- jQuery JS -->
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-  <!-- Code to the JavaScript File -->
-  <script src="script.js"></script>
+	<!-- jQuery JS -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+	<!-- Code to the JavaScript File -->
+	<script src="script.js"></script>
 </body>
+
 </html>
