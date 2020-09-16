@@ -50,6 +50,10 @@ h1 {
     margin-top: 20px;
 }
 
+#cityWeatherImg {
+    size: 200px;
+}
+
 h5 {
     font-size: 35px;
 }
