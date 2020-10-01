@@ -6,6 +6,8 @@ This page uses:
 - OpenWeather API with Ajax Call
 - jQuery
 
+This application determins a location based upon a user input and displays that citys current weather. It will also remember past searches and will always show the last city searched.
+
 How to Use:
 
 User enters a city in search area.
