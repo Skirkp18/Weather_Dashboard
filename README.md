@@ -59,8 +59,24 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+<<<<<<< HEAD
+=======
+GitHub Pages Link: https://skirkp18.github.io/Weather_Dashboard/
+
+This page uses:
+- OpenWeather API with Ajax Call
+- jQuery
+
+This application determins a location based upon a user input and displays that citys current weather. It will also remember past searches and will always show the last city searched.
+>>>>>>> 8569d4e425a32d63b53303d426dff45f135504dd
 
 
 
 
+<<<<<<< HEAD
+=======
+Copyright 2020 Sean Kirkpatrick
+
+Skirkp18@gmail.com
+>>>>>>> 8569d4e425a32d63b53303d426dff45f135504dd
 
